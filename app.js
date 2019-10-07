@@ -33,19 +33,19 @@ setTimeout(() =>{
 
 
 //як считувати з файлу текст
-const fs = require('fs');
-fs.readFile('./file.txt', {}, (err, data) => {
-    console.log(data.toString());
-});
-
-
-
-//флажок 'a'  використовується тоді коли хочеш створити новий файл
-let data = 'Hello';
-fs.writeFile('./text.txt', data,  {flags: 'a'}, (err) => {
-    if(!err) {
-        console.log('ok');
-
+// const fs = require('fs');
+// fs.readFile('./file.txt', {}, (err, data) => {
+//     console.log(data.toString());
+// });
+//
+//
+//
+// //флажок 'a'  використовується тоді коли хочеш створити новий файл
+// let data = 'Hello';
+// fs.writeFile('./text.txt', data,  {flags: 'a'}, (err) => {
+//     if(!err) {
+//         console.log('ok');
+//
 
 
 
@@ -85,3 +85,48 @@ fs.writeFile('./text.txt', data,  {flags: 'a'}, (err) => {
 
 
 //? = квеєрі параметр (імперсант)
+
+
+
+// як читати файл
+// const fs = require('fs');
+// fs.readFile('./file.txt', {}, (err, data) => {
+// console.log(data.toString());
+//     });
+
+//ЩОБ СТВОРИТИ НОВИЙ ФАЙЛ
+// let data = 'PRIVETIKI';
+// fs.writeFile('./text.txt', data, {flags:'a'}, (err) => {
+//    if (!err) {
+//     console.log('ok')
+//
+//     }
+// });
+
+//щось дописувати в їснуючий файл , якщо треба з нової строчки тоді пишемо \n
+// fs.appendFile('./file.txt','\nwrite something', {}, (err) => {
+//     if(!err) {
+//         console.log('ok');
+//     }
+// })
+
+
+
+//--y  підтверджувати усе коли нпм стартуєш
+
+
+
+//HTTP  МОДУЛЬ
+const http = new ProxyHttp("/proxy");
+const http = require('http');
+const server = http.createServer((req, res) => {
+    console.log('req');
+    res.end('hello')//виддає в фронт
+})
+server.listen(3000, (err) => {
+    if(!err) {
+        console.log('errrror')
+    } else {
+        console.log('listen 3000')
+    }
+})
